@@ -1,0 +1,30 @@
+buildscript {
+    ext{ // 전역변수 설정
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") // 아래 의존성에서 버전을 명시하지 않아야 사용 가능
+    }
+}
+apply plugin : 'java'
+apply plugin : 'eclipse'
+apply plugin : 'org.springframework.boot'
+apply plugin : 'io.spring.dependency-management' // 스프링 부트 의존성 관리
+
+group 'com.ssh.study'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories { // 의존성 lib들을 받을 원격 저장소 지정
+    mavenCentral() // 기본적으로 많이 사용
+    jcenter() // lib 업로드 난이도 때문에 사용(업로드를 간단하게)
+}
+
+dependencies { // 프로젝트 개발에 필요한 의존성들 선언
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
