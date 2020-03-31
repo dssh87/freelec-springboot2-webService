@@ -1,6 +1,7 @@
 package com.ssh.study.springboot.service;
 
 import com.ssh.study.springboot.domain.posts.PostsRepository;
+import com.ssh.study.springboot.web.dto.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class PostsService {
     private final PostsRepository postsRepository;
 
-    /*@Transactional
+    @Transactional
     public Long save(PostsSaveRequestDto requestDto){
         return postsRepository.save(requestDto.toEntity()).getId();
-    }*/
+    }
 
 }
