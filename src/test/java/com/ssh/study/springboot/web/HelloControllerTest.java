@@ -1,4 +1,4 @@
-package com.ssh.study.springboot;
+package com.ssh.study.springboot.web;
 
 import com.ssh.study.springboot.web.HelloController;
 import org.junit.Test;

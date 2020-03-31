@@ -1,9 +1,6 @@
-package com.ssh.study.springboot.dto;
+package com.ssh.study.springboot.web.dto;
 
-import com.ssh.study.springboot.web.dto.HelloResponseDto;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat; // junit의 기본 assertThat보다 자동완성이 좀 더 확실, 추가 lib 불필요
 
