@@ -9,13 +9,22 @@ public class PostsResponseDto {
     private Long id;
     private String title;
     private String content;
-    private String autor;
+    private String author;
 
     public PostsResponseDto(Posts entity){
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.content = entity.getContent();
-        this.autor = entity.getAuthor();
+        this.author = entity.getAuthor();
     }
 
+    @Override
+    public String toString() {
+        return "PostsResponseDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
 }

@@ -29,6 +29,14 @@ public class PostsService {
         posts.update(requestDto.getTitle(), requestDto.getContent());
         return id;
     }
+
+    @Transactional
+    public Long delete(Long id){
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
+        postsRepository.delete(posts);
+        return id;
+    }
+
     @Transactional(readOnly = true)
     public List<PostsListResponseDto> findAllDesc(){
         return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
