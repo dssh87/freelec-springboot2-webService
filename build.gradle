@@ -31,4 +31,5 @@ dependencies { // 프로젝트 개발에 필요한 의존성들 선언
     compile('com.h2database:h2')
     compile('org.springframework.boot:spring-boot-starter-mustache')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
