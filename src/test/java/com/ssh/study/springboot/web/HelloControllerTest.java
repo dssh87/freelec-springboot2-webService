@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions; // 어디서 사용?
@@ -21,6 +22,7 @@ public class HelloControllerTest {
     private MockMvc mvc; // 웹 API 테스트시 사용, 스프링 MVC 테스트의 시작점, GET과 POST 테스트 가능
     
     @Test
+    @WithMockUser(roles = "USER")
     public void hello_return() throws Exception{
         String hello = "hello";
 
@@ -30,6 +32,7 @@ public class HelloControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = "USER")
     public void helloDto_return() throws Exception{
         String name = " hello";
         int amount = 1000;
