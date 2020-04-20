@@ -1,10 +1,13 @@
 package com.ssh.study.springboot.web;
 
+import com.ssh.study.springboot.config.auth.SecurityConfig;
 import com.ssh.study.springboot.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -15,7 +18,12 @@ import static org.hamcrest.Matchers.is;
 
 
 @RunWith(SpringRunner.class) // 스프링 부트와 Junit 사이의 연결자 역할
-@WebMvcTest(controllers = HelloController.class) // web에 집중할 수 있는 어노테이션
+//@WebMvcTest(controllers = HelloController.class) // web에 집중할 수 있는 어노테이션
+@WebMvcTest(controllers = HelloController.class,
+        excludeFilters = {
+                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
+        }
+)
 public class HelloControllerTest {
 
     @Autowired // 스프링이 관리하는 빈을 주입 받는다.
