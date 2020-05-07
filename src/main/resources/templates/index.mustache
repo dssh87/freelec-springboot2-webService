@@ -1,41 +1,132 @@
 {{>layout/header}}
-    <h1>스프링 부트로 시작하는 웹 서비스</h1>
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-6">
-                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-                {{#userName1}}
-                    Logged in as: <span id="user">{{userName1}}</span>
 
-                    <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                {{/userName1}}
-                {{^userName1}}
-                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-                {{/userName1}}
+
+<body id="top" class="">
+
+<!-- Banner -->
+<!--
+    To use a video as your background, set data-video to the name of your video without
+    its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+    formats to work correctly.
+-->
+<section id="banner" data-video="images/banner">
+    <div class="inner">
+        <header>
+            <h1>동물의 숲에 오신걸 환영해요!</h1>
+            <p>반가워요 동물들 !!!<br>
+                여기는 당신이 꿈꾸던 동물원이에요 :)</p>
+        </header>
+        <a href="#main" class="more scrolly">Learn More</a>
+    </div>
+    <video autoplay="" loop=""><source src="images/banner.mp4" type="video/mp4"><source src="images/banner.webm" type="video/webm"></video></section>
+
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+
+
+
+        <!-- Boxes -->
+        <div class="thumbnails">
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic01.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
             </div>
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic02.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic03.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic04.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic05.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic06.jpg" alt=""></a>
+                <div class="inner">
+                    <h3>Nascetur nunc varius commodo</h3>
+                    <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                    <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+                </div>
+            </div>
+
         </div>
-        <br>
-        <!--목록 출력 영역-->
-        <table class="table table-horizontal table-bordered">
-            <thead class="thread-strong">
+
+        <div class="col-md-12">
+
+            <br>
+            <!--목록 출력 영역-->
+            <table class="table table-horizontal table-bordered">
+                <thead class="thread-strong">
                 <tr>
                     <th>게시글 번호</th>
                     <th>제목</th>
                     <th>작성자</th>
                     <th>최종수정일</th>
                 </tr>
-            </thead>
-            <tbody id="tbody">
-            {{#posts}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                    <td>{{author}}</td>
-                    <td>{{modifiedDate}}</td>
-                </tr>
-            {{/posts}}
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="tbody">
+                {{#posts}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                        <td>{{author}}</td>
+                        <td>{{modifiedDate}}</td>
+                    </tr>
+                {{/posts}}
+                </tbody>
+            </table>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                    {{#userName1}}
+                        Logged in as: <span id="user">{{userName1}}</span>
+
+                        <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+                    {{/userName1}}
+                    {{^userName1}}
+                        <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                        <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+                    {{/userName1}}
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+
 {{>layout/footer}}
