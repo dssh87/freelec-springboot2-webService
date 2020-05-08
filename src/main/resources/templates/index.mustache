@@ -1,12 +1,26 @@
 {{>layout/header}}
 <body id="top" class="">
+<div class="row">
+    <div class="col-md-6">
+        <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        {{#userName1}}
+            Logged in as: <span id="user">{{userName1}}</span>
+
+            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+        {{/userName1}}
+        {{^userName1}}
+            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+            <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+        {{/userName1}}
+    </div>
+</div>
 <!-- Banner -->
 <!--
     To use a video as your background, set data-video to the name of your video without
     its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
     formats to work correctly.
 -->
-<section id="banner" data-video="/static/images/banner">
+<section id="banner" data-video="images/banner">
     <div class="inner">
         <header>
             <h1>동물의 숲에 오신걸 환영해요!</h1>
@@ -16,8 +30,8 @@
         <a href="#main" class="more scrolly">Learn More</a>
     </div>
     <video autoplay="" loop="">
-        <source src="/static/images/banner.mp4" type="video/mp4">
-        <source src="/static/images/banner.webm" type="video/webm">
+        <source src="images/banner.mp4" type="video/mp4">
+        <source src="images/banner.webm" type="video/webm">
     </video>
 </section>
 
@@ -29,42 +43,42 @@
         <div class="thumbnails">
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic01.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic01.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
             </div>
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic02.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic02.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
             </div>
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic03.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic03.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
             </div>
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic04.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic04.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
             </div>
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic05.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic05.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
             </div>
 
             <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="/static/images/pic06.jpg" alt=""></a>
+                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic06.jpg" alt=""></a>
                 <div class="inner">
                     <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
                 </div>
@@ -97,20 +111,7 @@
                 </tbody>
             </table>
             <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-                    {{#userName1}}
-                        Logged in as: <span id="user">{{userName1}}</span>
 
-                        <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                    {{/userName1}}
-                    {{^userName1}}
-                        <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-                        <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-                    {{/userName1}}
-                </div>
-            </div>
         </div>
 
     </div>
