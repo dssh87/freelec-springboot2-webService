@@ -19,14 +19,22 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        System.out.println("index controller ... "+model);
         if (user != null) { // userName이라고 할 경우 윈도우의 userName을 가져오기 때문에 다른 변수명을 사용하는 것이 좋다
             model.addAttribute("userName1", user.getName());
         }
         return "index";
     }
 
+    @GetMapping("/view")
+    public String view() {
+        System.out.println("view controller");
+        return "view";
+    }
+
     @GetMapping("/posts/save")
     public String postsSave() {
+        System.out.println("save controller");
         return "posts-save";
     }
 

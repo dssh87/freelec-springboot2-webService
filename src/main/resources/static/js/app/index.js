@@ -2,6 +2,7 @@ var main = {
     init : function () {
         var _this = this;
         $('#btn-save').on('click', function(){
+            console.log("클릭 save")
             _this.save();
         });
         $('#btn-update').on('click', function(){
@@ -12,6 +13,7 @@ var main = {
         });
     },
     save : function () {
+        console.log("function save")
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
@@ -26,7 +28,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function () {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/view';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -48,7 +50,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function () {
             alert('글이 수정되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/view';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -64,7 +66,7 @@ var main = {
             contentType: 'application/json; charset=utf-8'
         }).done(function () {
             alert('글이 삭제되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/view';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });

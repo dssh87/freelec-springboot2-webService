@@ -1,8 +1,10 @@
 {{>layout/header}}
 <body id="top" class="">
+<!-- Oauth 및 글등록 -->
 <div class="row">
     <div class="col-md-6">
-        <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        <!--<a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>-->
+        <a href="/view" role="button" class="btn btn-primary">글 목록</a>
         {{#userName1}}
             Logged in as: <span id="user">{{userName1}}</span>
 
@@ -35,86 +37,55 @@
     </video>
 </section>
 
-<!-- Main -->
-<div id="main">
-    <div class="inner">
 
-        <!-- Boxes start -->
-        <div class="thumbnails">
 
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic01.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
+<!-- Boxes start -->
+<div class="thumbnails">
 
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic02.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic03.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic04.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic05.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic06.jpg" alt=""></a>
-                <div class="inner">
-                    <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
-                </div>
-            </div>
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic01.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
         </div>
-        <!-- Boxes End -->
+    </div>
 
-        <!-- Oauth 및 글등록 -->
-        <div class="col-md-12">
-            <br>
-            <!--목록 출력 영역-->
-            <table class="table table-horizontal table-bordered">
-                <thead class="thread-strong">
-                <tr>
-                    <th>게시글 번호</th>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>최종수정일</th>
-                </tr>
-                </thead>
-                <tbody id="tbody">
-                {{#posts}}
-                    <tr>
-                        <td>{{id}}</td>
-                        <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                        <td>{{author}}</td>
-                        <td>{{modifiedDate}}</td>
-                    </tr>
-                {{/posts}}
-                </tbody>
-            </table>
-            <br>
-
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic02.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
         </div>
+    </div>
 
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic03.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic04.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button style2 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic05.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button style3 fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <a class="image fit" style="cursor: pointer; outline: 0px;"><img src="images/pic06.jpg" alt=""></a>
+        <div class="inner">
+            <a class="button fit" data-poptrox="youtube,800x400" style="cursor: pointer; outline: 0px;">Watch</a>
+        </div>
     </div>
 </div>
+<!-- Boxes End -->
+
+
 
 {{>layout/footer}}
