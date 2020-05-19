@@ -1,5 +1,14 @@
 {{>layout/header}}
 <h1>게시글 등록</h1>
+{{#userName1}}
+    Logged in as: <span id="user">{{userName1}}</span>
+
+    <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+{{/userName1}}
+{{^userName1}}
+    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+{{/userName1}}
 <div class="col-md-12">
     <div class="col-md-4">
         <form>
@@ -18,16 +27,6 @@
         </form>
         <a href="/view" role="button" class="btn btn-secondary">취소</a>
         <button type="button" class="btn btn-primary" id="btn-save">등록</button>
-        {{#userName1}}
-            Logged in as: <span id="user">{{userName1}}</span>
-
-            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-        {{/userName1}}
-        {{^userName1}}
-            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-            <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-        {{/userName1}}
-
     </div>
 
 </div>
