@@ -16,7 +16,7 @@ apply plugin : 'org.springframework.boot'
 apply plugin : 'io.spring.dependency-management' // 스프링 부트 의존성 관리
 
 group 'com.ssh.study'
-version '1.0-SNAPSHOT'
+version '1.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories { // 의존성 lib들을 받을 원격 저장소 지정
