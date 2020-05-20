@@ -5,18 +5,20 @@ import com.ssh.study.springboot.web.dto.PostsResponseDto;
 import com.ssh.study.springboot.web.dto.PostsSaveRequestDto;
 import com.ssh.study.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@Slf4j
 public class PostApiController {
 
     private final PostsService postsService;
 
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto){
-        System.out.println("/api/v1/posts .... come");
+        log.info("/api/v1/posts .... come");
 
         return postsService.save(requestDto);
     }
