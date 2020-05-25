@@ -28,22 +28,23 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/news")
+    public String news() {
+        log.info("news controller");
+
+        return "news";
+    }
+
     @GetMapping("/view")
-    public String view(Model model, @LoginUser SessionUser user) {
+    public String view() {
         log.info("view controller");
-        model.addAttribute("posts", postsService.findAllDesc());
-        if (user != null) { // userName이라고 할 경우 윈도우의 userName을 가져오기 때문에 다른 변수명을 사용하는 것이 좋다
-            model.addAttribute("userName1", user.getName());
-        }
+
         return "view";
     }
 
     @GetMapping("/posts/save")
-    public String postsSave(Model model, @LoginUser SessionUser user) {
-        log.info("save controller");
-        if (user != null) { // userName이라고 할 경우 윈도우의 userName을 가져오기 때문에 다른 변수명을 사용하는 것이 좋다
-            model.addAttribute("userName1", user.getName());
-        }
+    public String postsSave() {
+
         return "posts-save";
     }
 
