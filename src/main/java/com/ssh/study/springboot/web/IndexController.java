@@ -28,6 +28,13 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/subway")
+    public String subway() {
+        log.info("subway controller");
+
+        return "subway";
+    }
+
     @GetMapping("/movie")
     public String movie() {
         log.info("movie controller");
